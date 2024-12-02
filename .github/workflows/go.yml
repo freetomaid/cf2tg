@@ -6,6 +6,9 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '*/15 * * * *'  # Run every 15 minutes
+env: 
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
 
 jobs:
   build:
@@ -37,9 +40,6 @@ jobs:
 
       - name: Build Go Project
         run: go build -o cf2tg .
-        env: 
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
 
       - name: Execute Go Project
         run: ./cf2tg
