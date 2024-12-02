@@ -1,5 +1,5 @@
 # cf2tg  
-[![Collect IPs](https://github.com/XigmaDev/cf2tg/actions/workflows/go.yml/badge.svg)](https://github.com/XigmaDev/cf2tg/actions/workflows/go.yml)
+[![Collect IPs](https://github.com/XigmaDev/cf2tg/actions/workflows/go.yml/badge.svg?branch=main&event=status)](https://github.com/XigmaDev/cf2tg/actions/workflows/go.yml)
 
 Auto Update Cloudflare Clean IP To Telegram Channel For Personal Use
 
