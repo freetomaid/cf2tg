@@ -1,6 +1,7 @@
 # cf2tg
 Auto Update Cloudflare Clean IP To Telegram Channel For Personal Use
-[Telegram Channel](t.me/cloudflare2tg)
+
+[TelegramChannel](https://t.me/cloudflare2tg)
 
 
 tnx : 
