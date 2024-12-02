@@ -8,8 +8,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-
-	"github.com/joho/godotenv"
 )
 
 const (
@@ -112,15 +110,15 @@ func sendMessageToTelegram(TelegramBotToken, chatID, message, imageURL string) e
 func main() {
 	imageURL := "images.png" // Example URL for Cloudflare logo
 
-	if err := godotenv.Load(); err != nil {
-		fmt.Println("Error loading .env file")
+	TelegramBotToken, ok := os.LookupEnv("BOT_TOKEN")
+	if !ok {
+		fmt.Printf("BOT_TOKEN not set\n")
 	}
-	TelegramBotToken := os.Getenv("BOT_TOKEN")
-	TelegramChatID := os.Getenv("CHAT_ID")
-	if TelegramBotToken == "" || TelegramChatID == "" {
-		fmt.Println("Error: One or more required environment variables are not set.")
-		return
+	TelegramChatID, ok := os.LookupEnv("CHAT_ID")
+	if !ok {
+		fmt.Printf("CHAT_ID not set\n")
 	}
+
 	ipv4Response, err := getOptimizationIP("v4")
 	if err != nil {
 		fmt.Printf("Error getting IPv4: %v\n", err)
