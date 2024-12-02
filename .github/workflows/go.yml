@@ -38,8 +38,8 @@ jobs:
       - name: Build Go Project
         run: go build -o cf2tg .
         env: 
-          TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
 
       - name: Execute Go Project
         run: ./cf2tg
