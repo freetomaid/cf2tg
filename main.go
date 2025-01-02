@@ -108,7 +108,7 @@ func sendMessageToTelegram(TelegramBotToken, chatID, message, imageURL string) e
 }
 
 func main() {
-	imageURL := "images.png" // Example URL for Cloudflare logo
+	imageURL := "images.png"
 
 	TelegramBotToken, ok := os.LookupEnv("BOT_TOKEN")
 	if !ok {
@@ -157,7 +157,7 @@ func main() {
 		if len(ipv6) > 0 {
 			message += "IPv6:\n" + formatIPs(ipv6[:min(len(ipv6), 25)]) + "\n\n"
 		}
-
+		message += "@cloudflare2tg"
 		if err := sendMessageToTelegram(TelegramBotToken, TelegramChatID, message, imageURL); err != nil {
 			fmt.Printf("Error sending message to Telegram: %v\n", err)
 		}
@@ -167,7 +167,7 @@ func main() {
 func formatIPs(ips []string) string {
 	formattedIPs := make([]string, len(ips))
 	for i, ip := range ips {
-		formattedIPs[i] = "`" + ip + "`" // Wrap each IP in backticks
+		formattedIPs[i] = "`" + ip + "`"
 	}
 	return strings.Join(formattedIPs, "\n")
 }
