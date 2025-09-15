@@ -157,7 +157,7 @@ func main() {
 		if len(ipv6) > 0 {
 			message += "IPv6:\n" + formatIPs(ipv6[:min(len(ipv6), 25)]) + "\n\n"
 		}
-		message += "@cloudflare2tg"
+		message += "@infoakungratis"
 		if err := sendMessageToTelegram(TelegramBotToken, TelegramChatID, message, imageURL); err != nil {
 			fmt.Printf("Error sending message to Telegram: %v\n", err)
 		}
